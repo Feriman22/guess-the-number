@@ -1,34 +1,26 @@
 #!/bin/bash
 
-# Generate random number between 1 and 100
+# Guess The Number game, written by Feriman (feriman.com)
+# https://github.com/Feriman22/guess-the-number
+
+# Generate a random number between 1 and 100
 number=$((1 + RANDOM % 100))
 
-# Initialize guess variable
-guess=0
-
+# Print the welcome text
 echo "Welcome to Guess the Number!"
 
-# Loop until guess matches the number
-while [ $guess -ne $number ]
-do
-  # Ask user for guess
-  read -p "Guess a number between 1 and 100: " guess
-  
-  # Check if guess is valid
-  if ! [[ "$guess" =~ ^[0-9]+$ ]]
-  then
-    echo "Invalid input. Please enter a number between 1 and 100."
-    continue
-  fi
-  
-  # Check if guess is too high or too low
-  if [ $guess -lt $number ]
-  then
-    echo "Too low. Try again."
-  elif [ $guess -gt $number ]
-  then
-    echo "Too high. Try again."
-  fi
-done
+# Start the game
+while true; do
+        read -p "Guess a number between 1 and 100: " guess
 
-echo "Congratulations! You guessed the number."
+        if ! [[ "$guess" =~ ^[0-9]+$ ]]; then
+                echo "Invalid input. Please enter a number between 1 and 100."
+        elif (( guess < number )); then
+                echo "Too low. Try again."
+        elif (( guess > number )); then
+                echo "Too high. Try again."
+        else
+                echo "Congratulations! You guessed the number."
+                break
+        fi
+done
