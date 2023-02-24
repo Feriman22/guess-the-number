@@ -10,3 +10,5 @@ After startup, the script will randomly generate a number between 1 and 100. The
 - And it has error handling in case you enter the wrong number.
 
 ![guess-the-number-bash](https://user-images.githubusercontent.com/22872515/221298496-4ff27299-0d8c-4ecf-8b29-26d6cf0257c1.png)
+
+Update: The code has been optimized.
