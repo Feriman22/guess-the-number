@@ -1,4 +1,4 @@
-# Guess the Number
+# Guess the Number written in bash
 
 "Guess the Game" game written in bash. The concept is very simple:
 
